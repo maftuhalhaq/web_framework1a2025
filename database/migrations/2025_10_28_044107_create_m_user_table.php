@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->timestamps();
             
-            // Mendefinisikan foreign key di kolom level_id di table m_user
             $table->foreign('level_id')->references('level_id')->on('m_level');
         });
     }
