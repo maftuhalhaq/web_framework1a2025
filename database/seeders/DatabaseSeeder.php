@@ -12,21 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Daftarkan semua seeder kustom di sini
-        // Pastikan urutannya benar (Induk/Parent table dulu)
-
         $this->call([
-                // INDUK (tidak bergantung pada tabel lain)
-            LevelSeeder::class,
             KategoriSeeder::class,
             SupplierSeeder::class,
-
-                // ANAK (bergantung pada tabel di atas)
-            UserSeeder::class,      // <-- Butuh LevelSeeder
-            BarangSeeder::class,    // <-- Butuh KategoriSeeder
-
-                // Seeder lain akan ditambahkan di sini nanti
-                // (Contoh: StokSeeder, PenjualanSeeder, dll.)
+            UserSeeder::class,
+            BarangSeeder::class,
             StokSeeder::class,
             PenjualanSeeder::class,
             PenjualanDetailSeeder::class,

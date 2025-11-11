@@ -19,75 +19,66 @@ class PenjualanSeeder extends Seeder
         $tanggal = Carbon::now();
 
         $data = [
-            // Transaksi 1
+
             [
-                'user_id' => 3, // Diinput oleh Staff/Kasir (ID 3)
+                'user_id' => 3, 
                 'pembeli' => 'Budi Santoso',
                 'penjualan_kode' => 'PJL001',
-                'penjualan_tanggal' => $tanggal->subDays(1), // Transaksi kemarin
+                'penjualan_tanggal' => $tanggal->subDays(1), 
             ],
-            // Transaksi 2
             [
                 'user_id' => 3,
                 'pembeli' => 'Citra Lestari',
                 'penjualan_kode' => 'PJL002',
-                'penjualan_tanggal' => $tanggal->subDays(1), // Transaksi kemarin
+                'penjualan_tanggal' => $tanggal->subDays(1),
             ],
-            // Transaksi 3
             [
                 'user_id' => 3,
                 'pembeli' => 'Doni Firmansyah',
                 'penjualan_kode' => 'PJL003',
-                'penjualan_tanggal' => $tanggal->subHours(5), // Transaksi hari ini 5 jam lalu
+                'penjualan_tanggal' => $tanggal->subHours(5), 
             ],
-            // Transaksi 4
             [
                 'user_id' => 3,
                 'pembeli' => 'Eka Putri',
                 'penjualan_kode' => 'PJL004',
                 'penjualan_tanggal' => $tanggal->subHours(4),
             ],
-            // Transaksi 5
             [
                 'user_id' => 3,
                 'pembeli' => 'Fajar Nugroho',
                 'penjualan_kode' => 'PJL005',
                 'penjualan_tanggal' => $tanggal->subHours(3),
             ],
-            // Transaksi 6
             [
                 'user_id' => 3,
                 'pembeli' => 'Gita Permata',
                 'penjualan_kode' => 'PJL006',
                 'penjualan_tanggal' => $tanggal->subHours(2),
             ],
-            // Transaksi 7
             [
                 'user_id' => 3,
                 'pembeli' => 'Hadi Wibowo',
                 'penjualan_kode' => 'PJL007',
                 'penjualan_tanggal' => $tanggal->subHours(1),
             ],
-            // Transaksi 8
             [
                 'user_id' => 3,
                 'pembeli' => 'Indah Cahyani',
                 'penjualan_kode' => 'PJL008',
-                'penjualan_tanggal' => $tanggal->subMinutes(30), // 30 menit lalu
+                'penjualan_tanggal' => $tanggal->subMinutes(30), 
             ],
-            // Transaksi 9
             [
                 'user_id' => 3,
                 'pembeli' => 'Joko Susilo',
                 'penjualan_kode' => 'PJL009',
-                'penjualan_tanggal' => $tanggal->subMinutes(10), // 10 menit lalu
+                'penjualan_tanggal' => $tanggal->subMinutes(10), 
             ],
-            // Transaksi 10
             [
                 'user_id' => 3,
                 'pembeli' => 'Kania Dewi',
                 'penjualan_kode' => 'PJL010',
-                'penjualan_tanggal' => $tanggal, // Tepat sekarang
+                'penjualan_tanggal' => $tanggal, 
             ],
         ];
         DB::table('t_penjualan')->insert($data);
