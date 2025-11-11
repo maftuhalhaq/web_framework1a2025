@@ -2,24 +2,34 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents; // Bisa dihapus jika tidak dipakai
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
     /**
      * Seed the application's database.
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Daftarkan semua seeder kustom di sini
+        // Pastikan urutannya benar (Induk/Parent table dulu)
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+                // INDUK (tidak bergantung pada tabel lain)
+            LevelSeeder::class,
+            KategoriSeeder::class,
+            SupplierSeeder::class,
+
+                // ANAK (bergantung pada tabel di atas)
+            UserSeeder::class,      // <-- Butuh LevelSeeder
+            BarangSeeder::class,    // <-- Butuh KategoriSeeder
+
+                // Seeder lain akan ditambahkan di sini nanti
+                // (Contoh: StokSeeder, PenjualanSeeder, dll.)
+            StokSeeder::class,
+            PenjualanSeeder::class,
+            PenjualanDetailSeeder::class,
         ]);
     }
 }
